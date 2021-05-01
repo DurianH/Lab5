@@ -1,7 +1,8 @@
 # CSE110 SP21 Lab 5
 
 ## Author(s):
-- Darian Hong and Christopher Vu
+- Darian Hong
+- Christopher Vu
 
 ## Part 1:
 
