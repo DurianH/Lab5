@@ -17,7 +17,7 @@ submitButton.addEventListener('submit', (event) => {
   canvasContext.textAlign = 'center';
   canvasContext.fillStyle = 'red';
   canvasContext.fillText(topText, 200, 50);
-  canvasContext.fillText(bottomText, 200, 400);
+  canvasContext.fillText(bottomText, 200, 350);
 
   //canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
 });
