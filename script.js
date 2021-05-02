@@ -8,13 +8,16 @@ img.addEventListener('load', () => {
   var buttonGroup = document.getElementById("button-group");
   var topText = document.getElementById("text-top");
   var bottomText = document.getElementById("text-bottom");
+  var dimensions = getDimensions(400, 400, img.width, img.height);
+  var startX = dimensions[2];
+  var startY = dimensions[3];
 
   canvas.style.color = black;
   buttonGroup.type = disabled;
   topText = "";
   bottomText = "";
 
-  canvas.drawImage(img, 0, 0);
+  canvas.drawImage(img, startX, startY);
 
   // Some helpful tips:
   // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
@@ -33,7 +36,7 @@ img.addEventListener('load', () => {
  * and also the starting X and starting Y coordinate to be used when you draw the new image to the
  * Canvas. These coordinates align with the top left of the image.
  */
-function getDimmensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
+function getDimensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
   let aspectRatio, height, width, startX, startY;
 
   // Get the aspect ratio, used so the picture always fits inside the canvas
