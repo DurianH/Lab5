@@ -36,7 +36,7 @@ img.addEventListener('load', (event) => {
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, 400, 400);
 
-  canvasContext.drawImage(img, dimensions[2], dimensions[3], dimensions[0], dimensions[1]);
+  canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
   console.log(dimensions[1]);
 });
 
