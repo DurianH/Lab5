@@ -13,7 +13,8 @@ submitButton.addEventListener('submit', (event) => {
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
 
-  canvasContext.font = '15px Arial';
+  canvasContext.font = '30px Comic Sans MS';
+  canvasContext.textAlign = 'center';
   canvasContext.fillStyle = 'red';
   canvasContext.fillText(topText, 200, 50);
   canvasContext.fillText(bottomText, 200, 400);
