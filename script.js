@@ -4,7 +4,8 @@ const img = new Image(); // used to load image from <input> and draw to canvas
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', () => {
-  var canvas = document.getElementById("user-image");
+  var canvasThing = document.getElementById("user-image");
+  var canvasContext = canvasThing.getContext('2d');
   var buttonGroup = document.getElementById("button-group");
   var topText = document.getElementById("text-top");
   var bottomText = document.getElementById("text-bottom");
@@ -12,8 +13,9 @@ img.addEventListener('load', () => {
   var startX = dimensions[2];
   var startY = dimensions[3];
 
-  canvas.style.color = black;
-  buttonGroup.type = disabled;
+  canvasContext.fillStyle = 'black';
+  canvasContext.fillRect = (0, 0, 400, 400);
+  buttonGroup.type = enabled;
   topText = "";
   bottomText = "";
 
