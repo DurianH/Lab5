@@ -37,12 +37,18 @@ imageFile.addEventListener('change', (event) => {
   img.alt = event.target.files[0].name;
 });
 
-/*clearButton.addEventListener('click', (event) => {
-  var mainCanvas = document.getElementById('user-image');
-  var canvasContext = mainCanvas.getContext('2d');
+clearButton.addEventListener('click', (event) => {
+  var clearButton = document.querySelector("[type='reset']");
+  var readButton = document.querySelector("[type='button']");
+  var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-});*/
+
+  clearButton.disabled = true;
+  readButton.disabled = true;
+  generateButton.disabled = false;
+
+});
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
