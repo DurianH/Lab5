@@ -15,7 +15,7 @@ submitButton.addEventListener('submit', (event) => {
 
   canvasContext.font = '15px Arial';
   canvasContext.fillStyle = 'red';
-  canvasContext.fillText(topText, 200, 0);
+  canvasContext.fillText(topText, 200, 50);
   canvasContext.fillText(bottomText, 200, 400);
 
   //canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
