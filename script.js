@@ -1,6 +1,24 @@
 // script.js
 
 const img = new Image(); // used to load image from <input> and draw to canvas
+const generateButton = document.forms["submit"];
+const imageFile = document.getElementById("image-input");
+
+generateButton.addEventListener('click', () => {
+
+});
+
+imageFile.addEventListener('change', () => {
+  var input = document.getElementById("image-input");
+  img.src = input;
+});
+
+clearButton.addEventListener('click', () => {
+  var mainCanvas = document.getElementById('user-image');
+  var canvasContext = mainCanvas.getContext('2d');
+
+  canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+});
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', () => {
@@ -54,3 +72,4 @@ function getDimensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
 
   return { 'width': width, 'height': height, 'startX': startX, 'startY': startY }
 }
+
