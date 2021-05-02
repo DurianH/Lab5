@@ -4,18 +4,22 @@ const img = new Image(); // used to load image from <input> and draw to canvas
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
 
+const mainCanvas = document.getElementById('user-image');
+const canvasContext = mainCanvas.getContext('2d');
+
 submitButton.addEventListener('submit', (event) => {
-  var mainCanvas = document.getElementById('user-image');
-  var canvasContext = mainCanvas.getContext('2d');
-  var topText = document.getElementById('text-top');
-  var bottomText = document.getElementById('text-bottom');
+  event.preventDefault();
+  //var mainCanvas = document.getElementById('user-image');
+  //var canvasContext = mainCanvas.getContext('2d');
+  var topText = document.getElementById('text-top').value;
+  var bottomText = document.getElementById('text-bottom').value;
 
   canvasContext.font = '15px Arial';
   canvasContext.fillStyle = 'red';
   canvasContext.fillText(topText, 200, 0);
-  convasContext.fillText(bottomText, 200, 400);
+  canvasContext.fillText(bottomText, 200, 400);
 
-  canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
+  //canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
 });
 
 imageFile.addEventListener('change', (event) => {
@@ -35,8 +39,8 @@ imageFile.addEventListener('change', (event) => {
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
-  var mainCanvas = document.getElementById('user-image');
-  var canvasContext = mainCanvas.getContext('2d');
+  //var mainCanvas = document.getElementById('user-image');
+  //var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
   var clearButton = document.querySelector("[type='reset']");
   var readButton = document.querySelector("[type='button']");
