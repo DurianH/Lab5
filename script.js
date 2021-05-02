@@ -13,7 +13,9 @@ const voiceSelection = document.getElementById('voice-selection');
 const voices = synth.getVoices();
 
 for(var index = 0; index <= voices.length; index++) {
-  voiceSelection.appendChild(voices[index]);
+  var option = document.createElement('voice option');
+  option.text = option.value = voices[index];
+  voiceSelection.add(option, 0);
 }
 
 readButton.addEventListener('click', (event) => {
