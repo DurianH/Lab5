@@ -8,7 +8,7 @@ const canvasContext = mainCanvas.getContext('2d');
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
-const readButton = document.querySelector("[type='submit']");
+const readButton = document.querySelector("[type='button']");
 const voiceSelection = document.getElementById('voice-selection');
 const voices = speechSynthesis.getVoices();
 
