@@ -6,9 +6,6 @@ const canvasContext = mainCanvas.getContext('2d');
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
 
-const mainCanvas = document.getElementById('user-image');
-const canvasContext = mainCanvas.getContext('2d');
-
 submitButton.addEventListener('submit', (event) => {
   event.preventDefault();
   //var mainCanvas = document.getElementById('user-image');
