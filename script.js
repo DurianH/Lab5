@@ -2,11 +2,11 @@
 
 const img = new Image(); // used to load image from <input> and draw to canvas
 const generateButton = document.forms["submit"];
-const imageFile = document.getElementById("image-input");
+const imageFile = document.querySelector("image-input");
 
-generateButton.addEventListener('click', () => {
+/*generateButton.addEventListener('click', () => {
 
-});
+});*/
 
 imageFile.addEventListener('change', () => {
   var input = document.getElementById("image-input");
