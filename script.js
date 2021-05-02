@@ -13,7 +13,7 @@ const voiceSelection = document.getElementById('voice-selection');
 const voices = synth.getVoices();
 
 for(var index = 0; index <= voices.length; index++) {
-  voiceSelection.add(voices[index]);
+  voiceSelection.appendChild(voices[index]);
 }
 
 readButton.addEventListener('click', (event) => {
