@@ -42,7 +42,7 @@ img.addEventListener('load', (event) => {
   var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
-  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+  canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, 400, 400);
   canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
