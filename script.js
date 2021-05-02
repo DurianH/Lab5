@@ -10,8 +10,8 @@ const imageFile = document.querySelector("image-input");
 
 imageFile.addEventListener('change', (event) => {
   var input = document.getElementById("image-input");
-  const objectURL = URL.createObjectURL(input);
-  img.src = input;
+  const objectURL = URL.createObjectURL(event.files[0]);
+  img.src = objectURL;
 });
 
 clearButton.addEventListener('click', (event) => {
