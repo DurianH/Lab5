@@ -10,8 +10,9 @@ submitButton.addEventListener('click', (event) => {
   var topText = document.getElementById('text-top');
   var bottomText = document.getElementById('text-bottom');
 
+  canvasContext.font = '15px Comic Sans'
   canvasContext.fillText(topText, 200, 0);
-  convasContext.fillText(bottomText, 0, 200);
+  convasContext.fillText(bottomText, 200, 400);
 });
 
 imageFile.addEventListener('change', (event) => {
