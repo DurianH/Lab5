@@ -20,7 +20,7 @@ submitButton.addEventListener('submit', (event) => {
   canvasContext.textAlign = 'center';
   canvasContext.fillStyle = 'red';
   canvasContext.fillText(topText, 200, 50);
-  canvasContext.fillText(bottomText, 200, 350);
+  canvasContext.fillText(bottomText, 200, 370);
 
   clearButton.disabled = false;
   readButton.disabled = false;
