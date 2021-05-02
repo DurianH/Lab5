@@ -10,7 +10,7 @@ const imageFile = document.getElementById("image-input");
 
 imageFile.addEventListener('change', (event) => {
   var input = document.getElementById("image-input");
-  const objectURL = URL.createObjectURL(event.files[0]);
+  const objectURL = URL.createObjectURL(event.target.files[0]);
   img.src = objectURL;
 });
 
