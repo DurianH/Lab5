@@ -8,12 +8,13 @@ const imageFile = document.querySelector("image-input");
 
 });*/
 
-imageFile.addEventListener('change', () => {
+imageFile.addEventListener('change', (event) => {
   var input = document.getElementById("image-input");
+  const objectURL = URL.createObjectURL(input);
   img.src = input;
 });
 
-clearButton.addEventListener('click', () => {
+clearButton.addEventListener('click', (event) => {
   var mainCanvas = document.getElementById('user-image');
   var canvasContext = mainCanvas.getContext('2d');
 
@@ -21,7 +22,7 @@ clearButton.addEventListener('click', () => {
 });
 
 // Fires whenever the img object loads a new image (such as with img.src =)
-img.addEventListener('load', () => {
+img.addEventListener('load', (event) => {
   // Some helpful tips:
   // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
   // - Clear the form when a new image is selected
