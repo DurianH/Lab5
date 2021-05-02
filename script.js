@@ -15,7 +15,7 @@ const voices = synth.getVoices();
 for(var index = 0; index <= voices.length; index++) {
   var option = document.createElement('voice-option');
   option.text = option.value = voices[index];
-  voiceSelection.add(option, 0);
+  voiceSelection.appendChild(option);
 }
 
 readButton.addEventListener('click', (event) => {
