@@ -42,8 +42,8 @@ submitButton.addEventListener('submit', (event) => {
   canvasContext.fillText(topText, 200, 50);
   canvasContext.fillText(bottomText, 200, 370);
 
-  topText.value = '';
-  bottomText.value = '';
+  document.getElementById('text-top').value = '';
+  document.getElementById('text-bottom').value = '';
 
   clearButton.disabled = false;
   readButton.disabled = false;
