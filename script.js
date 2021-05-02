@@ -14,12 +14,12 @@ imageFile.addEventListener('change', (event) => {
   img.src = objectURL;
 });
 
-clearButton.addEventListener('click', (event) => {
+/*clearButton.addEventListener('click', (event) => {
   var mainCanvas = document.getElementById('user-image');
   var canvasContext = mainCanvas.getContext('2d');
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-});
+});*/
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
