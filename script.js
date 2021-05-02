@@ -10,7 +10,7 @@ const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
 const readButton = document.querySelector("[type='button']");
 const voiceSelection = document.getElementById('voice-selection');
-const voices = speechSynthesis.getVoices();
+//const voices = speechSynthesis.getVoices();
 
 /*for(var index = 0; index < voices.length; index++) {
   var option = document.createElement('option');
