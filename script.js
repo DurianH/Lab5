@@ -1,7 +1,7 @@
 // script.js
 
 const img = new Image(); // used to load image from <input> and draw to canvas
-const speech = new SpeechSynthesis();
+var synth = window.speechSynthesis;
 
 const mainCanvas = document.getElementById('user-image');
 const canvasContext = mainCanvas.getContext('2d');
@@ -10,7 +10,7 @@ const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
 const readButton = document.querySelector("[type='submit']");
 const voiceSelection = document.getElementById('voice-selection');
-const voices = speech.getVoices();
+const voices = synth.getVoices();
 
 for(var index = 0; index <= voices.length; index++) {
   voiceSelection.add(voices[index]);
