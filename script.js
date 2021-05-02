@@ -5,6 +5,7 @@ const mainCanvas = document.getElementById('user-image');
 const canvasContext = mainCanvas.getContext('2d');
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
+const clearButton = document.querySelector("[type='reset']");
 
 submitButton.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -12,7 +13,6 @@ submitButton.addEventListener('submit', (event) => {
   //var canvasContext = mainCanvas.getContext('2d');
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
-  var clearButton = document.querySelector("[type='reset']");
   var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
@@ -38,7 +38,6 @@ imageFile.addEventListener('change', (event) => {
 });
 
 clearButton.addEventListener('click', (event) => {
-  var clearButton = document.querySelector("[type='reset']");
   var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
@@ -55,7 +54,6 @@ img.addEventListener('load', (event) => {
   //var mainCanvas = document.getElementById('user-image');
   //var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
-  var clearButton = document.querySelector("[type='reset']");
   var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
