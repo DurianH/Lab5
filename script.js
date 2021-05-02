@@ -10,11 +10,18 @@ const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
 const readButton = document.querySelector("[type='submit']");
 const voiceSelection = document.getElementById('voice-selection');
-const voices = synth.getVoices();
+const voices = speechSynthesis.getVoices();
 
-for(var index = 0; index <= voices.length; index++) {
-  var option = document.createElement('voice-option');
-  option.text = option.value = voices[index];
+for(var index = 0; index < voices.length; index++) {
+  var option = document.createElement('option');
+  option.textContent = voices[index].name + ' ('+ voices[i].lang + ')';
+
+  if(voices[i].default) {
+    option.textContent += ' -- DEFAULT';
+  }
+
+  option.setAttribute('data-lang', voices[index].lang);
+  option.setAttribute('data-name', voices[index].name);
   voiceSelection.appendChild(option);
 }
 
@@ -38,7 +45,7 @@ submitButton.addEventListener('submit', (event) => {
   clearButton.disabled = false;
   readButton.disabled = false;
   voiceSelection.disabled = false;
-  generateButton.disabled = true;
+  generateButton.disabled = true; 
 });
 
 imageFile.addEventListener('change', (event) => {
