@@ -12,6 +12,8 @@ imageFile.addEventListener('change', (event) => {
   var input = document.getElementById("image-input");
   const objectURL = URL.createObjectURL(event.target.files[0]);
   img.src = objectURL;
+
+  img.alt = event.target.files[0].name;
 });
 
 /*clearButton.addEventListener('click', (event) => {
@@ -29,9 +31,12 @@ img.addEventListener('load', (event) => {
   // - If you draw the image to canvas here, it will update as soon as a new image is selected
   var mainCanvas = document.getElementById('user-image');
   var canvasContext = mainCanvas.getContext('2d');
+  var dimensions = getDimensions(400, 400, img.width, img.height);
 
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, 400, 400);
+
+  canvasContext.drawImage(img.src, dimensions[2], dimensions[3]);
 });
 
 /**
