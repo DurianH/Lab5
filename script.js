@@ -6,14 +6,23 @@ const canvasContext = mainCanvas.getContext('2d');
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
+const readButton = document.querySelector("[type='submit']");
+const voiceSelection = document.getElementById('voice-selection');
+const voices = SpeechSynthesis.getVoices();
+
+for(var index = 0; index <= voices.length; index++) {
+  voiceSelection.add(voices[index]);
+}
+
+readButton.addEventListener('click', (event) => {
+  
+});
 
 submitButton.addEventListener('submit', (event) => {
   event.preventDefault();
-  //var mainCanvas = document.getElementById('user-image');
-  //var canvasContext = mainCanvas.getContext('2d');
+
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
-  var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.font = '30px Comic Sans MS';
@@ -24,10 +33,8 @@ submitButton.addEventListener('submit', (event) => {
 
   clearButton.disabled = false;
   readButton.disabled = false;
+  voiceSelection.disabled = false;
   generateButton.disabled = true;
-
-
-  //canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
 });
 
 imageFile.addEventListener('change', (event) => {
@@ -38,23 +45,20 @@ imageFile.addEventListener('change', (event) => {
 });
 
 clearButton.addEventListener('click', (event) => {
-  var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
 
   clearButton.disabled = true;
   readButton.disabled = true;
+  voiceSelection.disabled = true;
   generateButton.disabled = false;
 
 });
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
-  //var mainCanvas = document.getElementById('user-image');
-  //var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
-  var readButton = document.querySelector("[type='button']");
   var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
@@ -64,6 +68,7 @@ img.addEventListener('load', (event) => {
 
   clearButton.disabled = true;
   readButton.disabled = true;
+  voiceSelection.disabled = true;
   generateButton.disabled = false;
 });
 
