@@ -10,20 +10,20 @@ const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
 const readButton = document.querySelector("[type='button']");
 const voiceSelection = document.getElementById('voice-selection');
-//const voices = speechSynthesis.getVoices();
+const voices = speechSynthesis.getVoices();
 
-/*for(var index = 0; index < voices.length; index++) {
+for(var index = 0; index < voices.length; index++) {
   var option = document.createElement('option');
-  option.textContent = voices[index].name + ' ('+ voices[i].lang + ')';
+  option.textContent = voices[index].name + ' ('+ voices[index].lang + ')';
 
-  if(voices[i].default) {
+  if(voices[index].default) {
     option.textContent += ' -- DEFAULT';
   }
 
   option.setAttribute('data-lang', voices[index].lang);
   option.setAttribute('data-name', voices[index].name);
   voiceSelection.appendChild(option);
-}*/
+}
 populateVoiceList();
 if(speechSynthesis.onvoiceschanged !== undefined) {
   speechSynthesis.onvoiceschanged = populateVoiceList;
@@ -130,21 +130,4 @@ function getDimensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
   }
 
   return { 'width': width, 'height': height, 'startX': startX, 'startY': startY }
-}
-
-function populateVoiceList() {
-  voices = synth.getVoices();
-
-  for(var index = 0; index < voices.length; index++) {
-    var option = document.createElement('option');
-    option.textContent = voices[index].name + ' ('+ voices[i].lang + ')';
-
-    if(voices[i].default) {
-      option.textContent += ' -- DEFAULT';
-    }
-
-    option.setAttribute('data-lang', voices[index].lang);
-    option.setAttribute('data-name', voices[index].name);
-    voiceSelection.appendChild(option);
-  }
 }
