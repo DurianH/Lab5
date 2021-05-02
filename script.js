@@ -1,6 +1,8 @@
 // script.js
 
 const img = new Image(); // used to load image from <input> and draw to canvas
+const mainCanvas = document.getElementById('user-image');
+const canvasContext = mainCanvas.getContext('2d');
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
 
@@ -23,7 +25,6 @@ submitButton.addEventListener('submit', (event) => {
 });
 
 imageFile.addEventListener('change', (event) => {
-  var input = document.getElementById("image-input");
   const objectURL = URL.createObjectURL(event.target.files[0]);
   img.src = objectURL;
 
