@@ -14,6 +14,7 @@ imageFile.addEventListener('change', (event) => {
   img.src = objectURL;
 
   img.alt = event.target.files[0].name;
+  console.log(img.alt);
 });
 
 /*clearButton.addEventListener('click', (event) => {
@@ -36,7 +37,7 @@ img.addEventListener('load', (event) => {
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, 400, 400);
 
-  canvasContext.drawImage(img.src, dimensions[2], dimensions[3]);
+  canvasContext.drawImage(img, dimensions[2], dimensions[3]);
 });
 
 /**
