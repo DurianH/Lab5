@@ -1,12 +1,14 @@
 // script.js
 
 const img = new Image(); // used to load image from <input> and draw to canvas
+const mainCanvas = document.getElementById('user-image');
+const canvasContext = mainCanvas.getContext('2d');
 const imageFile = document.getElementById("image-input");
 const submitButton = document.getElementById('generate-meme');
 
 submitButton.addEventListener('submit', (event) => {
-  var mainCanvas = document.getElementById('user-image');
-  var canvasContext = mainCanvas.getContext('2d');
+  //var mainCanvas = document.getElementById('user-image');
+  //var canvasContext = mainCanvas.getContext('2d');
   var topText = document.getElementById('text-top');
   var bottomText = document.getElementById('text-bottom');
 
@@ -19,7 +21,6 @@ submitButton.addEventListener('submit', (event) => {
 });
 
 imageFile.addEventListener('change', (event) => {
-  var input = document.getElementById("image-input");
   const objectURL = URL.createObjectURL(event.target.files[0]);
   img.src = objectURL;
 
@@ -35,8 +36,8 @@ imageFile.addEventListener('change', (event) => {
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
-  var mainCanvas = document.getElementById('user-image');
-  var canvasContext = mainCanvas.getContext('2d');
+  //var mainCanvas = document.getElementById('user-image');
+  //var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
   var clearButton = document.querySelector("[type='reset']");
   var readButton = document.querySelector("[type='button']");
