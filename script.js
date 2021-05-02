@@ -1,12 +1,18 @@
 // script.js
 
 const img = new Image(); // used to load image from <input> and draw to canvas
-const generateButton = document.forms["submit"];
 const imageFile = document.getElementById("image-input");
+const submitButton = document.querySelector("[type='submit']");
 
-/*generateButton.addEventListener('click', () => {
+submitButton.addEventListener('click', (event) => {
+  var mainCanvas = document.getElementById('user-image');
+  var canvasContext = mainCanvas.getContext('2d');
+  var topText = document.getElementById('text-top');
+  var bottomText = document.getElementById('text-bottom');
 
-});*/
+  canvasContext.fillText(topText, 200, 0);
+  convasContext.fillText(bottomText, 0, 200);
+});
 
 imageFile.addEventListener('change', (event) => {
   var input = document.getElementById("image-input");
@@ -33,13 +39,20 @@ img.addEventListener('load', (event) => {
   var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
   var clearButton = document.querySelector("[type='reset']");
+  var readButton = document.querySelector("[type='button']");
+  var generateButton = document.querySelector("[type='submit']");
 
+  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, 400, 400);
   canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
 
-  clearButton.disabled = false;
+  clearButton.disabled = true;
+  readButton.disabled = true;
+  generateButton.disabled = false;
 });
+
+
 
 /**
  * Takes in the dimensions of the canvas and the new image, then calculates the new
