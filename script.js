@@ -32,12 +32,13 @@ img.addEventListener('load', (event) => {
   var mainCanvas = document.getElementById('user-image');
   var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
+  var clearButton = document.querySelector('button');
 
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, 400, 400);
-
   canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
-  console.log(dimensions[1]);
+
+  clearButton.disabled = false;
 });
 
 /**
