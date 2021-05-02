@@ -2,9 +2,9 @@
 
 const img = new Image(); // used to load image from <input> and draw to canvas
 const imageFile = document.getElementById("image-input");
-const submitButton = document.querySelector("[type='submit']");
+const submitButton = document.getElementById('generate-meme');
 
-submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('submit', (event) => {
   var mainCanvas = document.getElementById('user-image');
   var canvasContext = mainCanvas.getContext('2d');
   var topText = document.getElementById('text-top');
