@@ -25,9 +25,11 @@ for(var index = 0; index < voices.length; index++) {
   voiceSelection.appendChild(option);
 }
 
-if(speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = populateVoiceList;
-}
+console.log(voiceSelection[0]);
+
+/*if(speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = ;
+}*/
 
 /*readButton.addEventListener('click', (event) => {
   
