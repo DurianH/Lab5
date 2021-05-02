@@ -25,6 +25,8 @@ for(var index = 0; index < voices.length; index++) {
   voiceSelection.appendChild(option);
 }
 
+speechSynthesis.onvoiceschanged = voiceSelection;
+
 readButton.addEventListener('click', (event) => {
   
 });
