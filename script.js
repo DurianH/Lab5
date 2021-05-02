@@ -12,12 +12,20 @@ submitButton.addEventListener('submit', (event) => {
   //var canvasContext = mainCanvas.getContext('2d');
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
+  var clearButton = document.querySelector("[type='reset']");
+  var readButton = document.querySelector("[type='button']");
+  var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.font = '30px Comic Sans MS';
   canvasContext.textAlign = 'center';
   canvasContext.fillStyle = 'red';
   canvasContext.fillText(topText, 200, 50);
   canvasContext.fillText(bottomText, 200, 350);
+
+  clearButton.disabled = false;
+  readButton.disabled = false;
+  generateButton.disabled = true;
+
 
   //canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
 });
