@@ -10,10 +10,12 @@ submitButton.addEventListener('click', (event) => {
   var topText = document.getElementById('text-top');
   var bottomText = document.getElementById('text-bottom');
 
-  canvasContext.font = '15px Comic Sans';
+  canvasContext.font = '15px Arial';
   canvasContext.fillStyle = 'red';
   canvasContext.fillText(topText, 200, 0);
   convasContext.fillText(bottomText, 200, 400);
+
+  canvasContext.drawImage(img, dimensions['startX'], dimensions['startY'], dimensions['width'], dimensions['height']);
 });
 
 imageFile.addEventListener('change', (event) => {
@@ -33,10 +35,6 @@ imageFile.addEventListener('change', (event) => {
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
-  // Some helpful tips:
-  // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
-  // - Clear the form when a new image is selected
-  // - If you draw the image to canvas here, it will update as soon as a new image is selected
   var mainCanvas = document.getElementById('user-image');
   var canvasContext = mainCanvas.getContext('2d');
   var dimensions = getDimensions(400, 400, img.width, img.height);
