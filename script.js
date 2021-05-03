@@ -12,26 +12,10 @@ const readButton = document.querySelector("[type='button']");
 const voiceSelection = document.getElementById('voice-selection');
 var voices = speechSynthesis.getVoices();
 
-/*for(var index = 0; index < voices.length; index++) {
-  var option = document.createElement('option');
-  option.textContent = voices[index].name + ' ('+ voices[index].lang + ')';
-
-  if(voices[index].default) {
-    option.textContent += ' -- DEFAULT';
-  }
-
-  option.setAttribute('data-lang', voices[index].lang);
-  option.setAttribute('data-name', voices[index].name);
-  voiceSelection.appendChild(option);
-}*/
-
 populateVoiceList();
 if(speechSynthesis.onvoiceschanged !== undefined) {
   speechSynthesis.onvoiceschanged = populateVoiceList;
 }
-
-console.log(voiceSelection[1]);
-console.log(voices);
 
 /*readButton.addEventListener('click', (event) => {
   
@@ -42,7 +26,7 @@ submitButton.addEventListener('submit', (event) => {
 
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
-  var generateButton = document.querySelector("[type='submit']");
+  //var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.font = '30px Comic Sans MS';
   canvasContext.textAlign = 'center';
@@ -56,7 +40,7 @@ submitButton.addEventListener('submit', (event) => {
   clearButton.disabled = false;
   readButton.disabled = false;
   voiceSelection.disabled = false;
-  generateButton.disabled = true; 
+  submitButton.disabled = true; 
 });
 
 imageFile.addEventListener('change', (event) => {
@@ -67,21 +51,21 @@ imageFile.addEventListener('change', (event) => {
 });
 
 clearButton.addEventListener('click', (event) => {
-  var generateButton = document.querySelector("[type='submit']");
+  //var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
 
   clearButton.disabled = true;
   readButton.disabled = true;
   voiceSelection.disabled = true;
-  generateButton.disabled = false;
+  submitButton.disabled = false;
 
 });
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
   var dimensions = getDimensions(400, 400, img.width, img.height);
-  var generateButton = document.querySelector("[type='submit']");
+  //var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
   canvasContext.fillStyle = 'black';
@@ -91,7 +75,7 @@ img.addEventListener('load', (event) => {
   clearButton.disabled = true;
   readButton.disabled = true;
   voiceSelection.disabled = true;
-  generateButton.disabled = false;
+  submitButton.disabled = false;
 });
 
 
