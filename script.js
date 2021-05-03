@@ -139,7 +139,7 @@ function getDimensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
 function populateVoiceList() {
   voices = synth.getVoices();
 
-  for(i = 0; i < voices.length ; i++) {
+  for(var i = 0; i < voices.length ; i++) {
     var option = document.createElement('option');
     option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
 
