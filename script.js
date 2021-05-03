@@ -17,9 +17,15 @@ if(speechSynthesis.onvoiceschanged !== undefined) {
   speechSynthesis.onvoiceschanged = populateVoiceList;
 }
 
-/*readButton.addEventListener('click', (event) => {
-  
-});*/
+readButton.addEventListener('click', (event) => {
+  var topText = document.getElementById('text-top').value;
+  var bottomText = document.getElementById('text-bottom').value;
+  var text = topText.concat(' ');
+  var text = text.concat(bottomText);
+  var utterance = new SpeechSynthesisUtterance(text);
+
+  speechSynthesis.speak(utterance);
+});
 
 submitButton.addEventListener('submit', (event) => {
   event.preventDefault();
