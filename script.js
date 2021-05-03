@@ -23,8 +23,10 @@ readButton.addEventListener('click', (event) => {
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
   var text = topText.concat(' ');
-  var text = text.concat(bottomText);
+  text = text.concat(bottomText);
   var utterance = new SpeechSynthesisUtterance(text);
+
+  console.log(text);
 
   var selectedOption = voiceSelection.selectedOptions[0].getAttribute('data-name');
   for(var i = 0; i < voices.length ; i++) {
@@ -76,7 +78,6 @@ submitButton.addEventListener('submit', (event) => {
   clearButton.disabled = false;
   readButton.disabled = false;
   voiceSelection.disabled = false;
-  generateButton.disabled = true; 
 });
 
 imageFile.addEventListener('change', (event) => {
