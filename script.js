@@ -26,7 +26,7 @@ submitButton.addEventListener('submit', (event) => {
 
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
-  //var generateButton = document.querySelector("[type='submit']");
+  var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.font = '30px Comic Sans MS';
   canvasContext.textAlign = 'center';
@@ -40,7 +40,7 @@ submitButton.addEventListener('submit', (event) => {
   clearButton.disabled = false;
   readButton.disabled = false;
   voiceSelection.disabled = false;
-  submitButton.disabled = true; 
+  generateButton.disabled = true; 
 });
 
 imageFile.addEventListener('change', (event) => {
@@ -51,21 +51,21 @@ imageFile.addEventListener('change', (event) => {
 });
 
 clearButton.addEventListener('click', (event) => {
-  //var generateButton = document.querySelector("[type='submit']");
+  var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
 
   clearButton.disabled = true;
   readButton.disabled = true;
   voiceSelection.disabled = true;
-  submitButton.disabled = false;
+  generateButton.disabled = false;
 
 });
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', (event) => {
   var dimensions = getDimensions(400, 400, img.width, img.height);
-  //var generateButton = document.querySelector("[type='submit']");
+  var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
   canvasContext.fillStyle = 'black';
@@ -75,7 +75,7 @@ img.addEventListener('load', (event) => {
   clearButton.disabled = true;
   readButton.disabled = true;
   voiceSelection.disabled = true;
-  submitButton.disabled = false;
+  generateButton.disabled = false;
 });
 
 
