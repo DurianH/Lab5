@@ -33,19 +33,19 @@ volume.addEventListener('input', (event) => {
   var volumeLevel = document.querySelector("[type='range']").value;
 
   if(volumeLevel == 0) {
-    volumeIcon = "icons/volume-level-0.svg";
+    volumeIcon.src = "icons/volume-level-0.svg";
   }
 
   else if(volumeLevel > 0 && volumeLevel <= 33) {
-    volumeIcon = "icons/volume-level-1.svg";
+    volumeIcon.src = "icons/volume-level-1.svg";
   }
 
   else if(volumeLevel > 33 && volumeLevel <= 66) {
-    volumeIcon = "icons/volume-level-2.svg";
+    volumeIcon.src = "icons/volume-level-2.svg";
   }
 
   else if(volumeLevel > 66 && volumeLevel <= 100) {
-    volumeIcon = "icons/volume-level-3.svg";
+    volumeIcon.src = "icons/volume-level-3.svg";
   }
 });
 
