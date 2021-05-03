@@ -10,4 +10,4 @@ https://durianh.github.io/Lab5/
 
 ## Part 2:
 
-https://github.com/DurianH/github-actions-for-ci
+https://github.com/DurianH/github-actions-for-ci/issues/8
