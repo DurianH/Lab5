@@ -26,7 +26,8 @@ readButton.addEventListener('click', (event) => {
   var text = text.concat(bottomText);
   var utterance = new SpeechSynthesisUtterance(text);
 
-  speechSynthesis.speak(utterance);
+  utterance.volume = range.value / 100;
+  synth.speak(utterance);
 });
 
 range.addEventListener('input', (event) => {
