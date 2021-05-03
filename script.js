@@ -72,9 +72,6 @@ submitButton.addEventListener('submit', (event) => {
   canvasContext.fillText(topText, 200, 50);
   canvasContext.fillText(bottomText, 200, 370);
 
-  //document.getElementById('text-top').value = '';
-  //document.getElementById('text-bottom').value = '';
-
   clearButton.disabled = false;
   readButton.disabled = false;
   voiceSelection.disabled = false;
@@ -91,6 +88,8 @@ clearButton.addEventListener('click', (event) => {
   var generateButton = document.querySelector("[type='submit']");
 
   canvasContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+  document.getElementById('text-top').value = '';
+  document.getElementById('text-bottom').value = '';
 
   clearButton.disabled = true;
   readButton.disabled = true;
