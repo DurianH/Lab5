@@ -10,6 +10,7 @@ const submitButton = document.getElementById('generate-meme');
 const clearButton = document.querySelector("[type='reset']");
 const readButton = document.querySelector("[type='button']");
 const volume = document.getElementById('volume-group');
+var range = document.querySelector("[type='range']");
 const voiceSelection = document.getElementById('voice-selection');
 var voices = speechSynthesis.getVoices();
 
@@ -28,24 +29,23 @@ readButton.addEventListener('click', (event) => {
   speechSynthesis.speak(utterance);
 });
 
-volume.addEventListener('input', (event) => {
+range.addEventListener('input', (event) => {
   var volumeIcon = volume.getElementsByTagName('img');
-  var volumeLevel = volume.getElementsByTagName('input');
-  console.log(volumeLevel.value);
+  console.log(range.value);
 
-  if(volumeLevel == 0) {
+  if(range.value == 0) {
     volumeIcon.src = "icons/volume-level-0.svg";
   }
 
-  else if(volumeLevel > 0 && volumeLevel <= 33) {
+  else if(range.value > 0 && range.value <= 33) {
     volumeIcon.src = "icons/volume-level-1.svg";
   }
 
-  else if(volumeLevel > 33 && volumeLevel <= 66) {
+  else if(range.value > 33 && range.value <= 66) {
     volumeIcon.src = "icons/volume-level-2.svg";
   }
 
-  else if(volumeLevel > 66 && volumeLevel <= 100) {
+  else if(range.value > 66 && range.value <= 100) {
     volumeIcon.src = "icons/volume-level-3.svg";
   }
 });
