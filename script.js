@@ -30,8 +30,7 @@ readButton.addEventListener('click', (event) => {
 });
 
 range.addEventListener('input', (event) => {
-  var volumeIcon = volume.getElementsByTagName('img');
-  console.log(range.value);
+  var volumeIcon = document.querySelector('#volume-group img');
 
   if(range.value == 0) {
     volumeIcon.src = "icons/volume-level-0.svg";
