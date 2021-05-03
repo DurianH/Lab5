@@ -27,7 +27,7 @@ readButton.addEventListener('click', (event) => {
   var utterance = new SpeechSynthesisUtterance(text);
 
   var selectedOption = voiceSelection.selectedOptions[0].getAttribute('data-name');
-  for(i = 0; i < voices.length ; i++) {
+  for(var i = 0; i < voices.length ; i++) {
     if(voices[i].name === selectedOption) {
       utterance.voice = voices[i];
     }
