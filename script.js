@@ -78,7 +78,6 @@ submitButton.addEventListener('submit', (event) => {
   clearButton.disabled = false;
   readButton.disabled = false;
   voiceSelection.disabled = false;
-  generateButton.disabled = true; 
 });
 
 imageFile.addEventListener('change', (event) => {
