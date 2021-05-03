@@ -26,7 +26,13 @@ readButton.addEventListener('click', (event) => {
   var text = text.concat(bottomText);
   var utterance = new SpeechSynthesisUtterance(text);
 
-  utterance.voice = voiceSelection.value.voice;
+  var selectedOption = voiceSelection.selectedOptions[0].getAttribute('data-name');
+  for(i = 0; i < voices.length ; i++) {
+    if(voices[i].name === selectedOption) {
+      utterance.voice = voices[i];
+    }
+  }
+
   utterance.volume = range.value / 100;
   synth.speak(utterance);
 });
