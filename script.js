@@ -23,8 +23,10 @@ readButton.addEventListener('click', (event) => {
   var topText = document.getElementById('text-top').value;
   var bottomText = document.getElementById('text-bottom').value;
   var text = topText.concat(' ');
-  var text = text.concat(bottomText);
+  text = text.concat(bottomText);
   var utterance = new SpeechSynthesisUtterance(text);
+
+  console.log(text);
 
   var selectedOption = voiceSelection.selectedOptions[0].getAttribute('data-name');
   for(var i = 0; i < voices.length ; i++) {
@@ -70,8 +72,8 @@ submitButton.addEventListener('submit', (event) => {
   canvasContext.fillText(topText, 200, 50);
   canvasContext.fillText(bottomText, 200, 370);
 
-  document.getElementById('text-top').value = '';
-  document.getElementById('text-bottom').value = '';
+  //document.getElementById('text-top').value = '';
+  //document.getElementById('text-bottom').value = '';
 
   clearButton.disabled = false;
   readButton.disabled = false;
