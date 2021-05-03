@@ -30,7 +30,7 @@ readButton.addEventListener('click', (event) => {
 
 volume.addEventListener('input', (event) => {
   var volumeIcon = volume.getElementsByTagName('img');
-  var volumeLevel = volume.getElementsByTagName('input').value;
+  var volumeLevel = volume.value;
   console.log(volumeLevel);
 
   if(volumeLevel == 0) {
